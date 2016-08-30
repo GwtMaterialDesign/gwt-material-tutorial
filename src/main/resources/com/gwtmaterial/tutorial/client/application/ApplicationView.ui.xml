@@ -23,10 +23,34 @@
 
     <ui:with field="res" type="com.gwtmaterial.tutorial.client.resources.AppResources"/>
 
-    <m:MaterialPanel textAlign="CENTER">
-
-        <m:MaterialIcon marginTop="120" textColor="blue darken-1" iconType="POLYMER" iconSize="LARGE"/>
-        <m:MaterialLabel text="Hello MD World" textColor="blue" fontSize="2em"/>
-        <m:MaterialLabel text="Start building now your gwt-material apps." textColor="blue" fontSize="0.8em"/>
+    <m:MaterialPanel>
+        <m:MaterialHeader>
+            <m:MaterialNavBar activates="mysidenav" backgroundColor="purple">
+                <m:MaterialNavBrand text="My App" paddingLeft="20"/>
+                <m:MaterialNavSection float="RIGHT">
+                    <m:MaterialLink text="Login" href="#login"/>
+                    <m:MaterialLink text="Signup" href="#signup"/>
+                </m:MaterialNavSection>
+            </m:MaterialNavBar>
+            <m:MaterialSideNav m:id="mysidenav" type="PUSH" width="280">
+                <m:MaterialLink text="Link 1" iconType="ACCESS_ALARM"/>
+                <m:MaterialLink text="Link 2" iconType="ACCESS_ALARM"/>
+                <m:MaterialLink text="Link 3" iconType="ACCESS_ALARM"/>
+                <m:MaterialLink text="Link 4" iconType="ACCESS_ALARM"/>
+                <m:MaterialLink text="Link 5" iconType="ACCESS_ALARM"/>
+            </m:MaterialSideNav>
+        </m:MaterialHeader>
+        <m:MaterialContainer>
+            <m:MaterialLabel text="This is main content" textAlign="CENTER"/>
+        </m:MaterialContainer>
+        <m:MaterialFAB>
+            <m:MaterialButton iconType="ADD" type="FLOATING" size="LARGE"/>
+            <m:MaterialFABList>
+                <m:MaterialButton iconType="ACCESS_TIME" backgroundColor="purple" tooltip="Access Time" tooltipPosition="LEFT" type="FLOATING"/>
+                <m:MaterialButton iconType="ACCESSIBLE" backgroundColor="orange" tooltip="Accessible" tooltipPosition="LEFT" type="FLOATING"/>
+                <m:MaterialButton iconType="AC_UNIT" backgroundColor="red" tooltip="AC Unit" tooltipPosition="LEFT" type="FLOATING"/>
+                <m:MaterialButton iconType="ZOOM_IN" backgroundColor="blue" tooltip="Zoom In" tooltipPosition="LEFT" type="FLOATING"/>
+            </m:MaterialFABList>
+        </m:MaterialFAB>
     </m:MaterialPanel>
 </ui:UiBinder>

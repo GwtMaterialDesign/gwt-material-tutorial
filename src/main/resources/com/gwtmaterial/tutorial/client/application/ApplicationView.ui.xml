@@ -25,7 +25,7 @@
 
     <m:MaterialPanel>
         <m:MaterialHeader>
-            <m:MaterialNavBar activates="mysidenav" backgroundColor="purple">
+            <m:MaterialNavBar activates="mysidenav">
                 <m:MaterialNavBrand text="My App" paddingLeft="20"/>
                 <m:MaterialNavSection float="RIGHT">
                     <m:MaterialLink text="Login" href="#login"/>
@@ -41,7 +41,18 @@
             </m:MaterialSideNav>
         </m:MaterialHeader>
         <m:MaterialContainer>
-            <m:MaterialLabel text="This is main content" textAlign="CENTER"/>
+            <m:MaterialRow marginTop="40">
+                <m:MaterialTitle shadow="5" hoverable="true" textAlign="CENTER" grid="s12 m6 l4" offset="m3 l4" title="This is Color Panel" description="Yey Colors">
+                    <m:MaterialLabel fontSize="2em" fontWeight="BOLD" text="Very very very long long long long long long long long long long text" truncate="true" />
+                    <m:MaterialTextBox placeholder="First Name" grid="s12 m6 l6" />
+                    <m:MaterialTextBox placeholder="Last Name" grid="s12 m6 l6"/>
+                    <m:MaterialTextArea placeholder="About" grid="s12"/>
+                    <m:MaterialDatePicker placeholder="My Birthday" grid="s12"/>
+                    <m:MaterialRadioButton text="Male" name="gender" grid="s6 m12 l12"/>
+                    <m:MaterialRadioButton text="Female" name="gender" grid="s6 m12 l12"/>
+                    <m:MaterialCheckBox text="Are you cool" grid="s12" type="FILLED"/>
+                </m:MaterialTitle>
+            </m:MaterialRow>
         </m:MaterialContainer>
         <m:MaterialFAB>
             <m:MaterialButton iconType="ADD" type="FLOATING" size="LARGE"/>

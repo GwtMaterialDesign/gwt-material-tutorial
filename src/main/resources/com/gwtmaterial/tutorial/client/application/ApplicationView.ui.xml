@@ -18,8 +18,7 @@
   #L%
   -->
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
-        xmlns:g='urn:import:com.google.gwt.user.client.ui'
-        xmlns:m="urn:import:gwt.material.design.client.ui">
+             xmlns:m="urn:import:gwt.material.design.client.ui">
 
     <ui:with field="res" type="com.gwtmaterial.tutorial.client.resources.AppResources"/>
 
@@ -42,7 +41,9 @@
         </m:MaterialHeader>
         <m:MaterialContainer>
             <m:MaterialRow marginTop="40">
-                <m:MaterialTitle shadow="5" hoverable="true" textAlign="CENTER" grid="s12 m6 l4" offset="m3 l4" title="This is Color Panel" description="Yey Colors">
+
+                <m:MaterialTitle ui:field="card" shadow="5" hoverable="true" textAlign="CENTER" grid="s12 m6 l4" offset="m3 l4" title="This is Color Panel" description="Yey Colors">
+                    <m:MaterialButton ui:field="btnAnimate" display="BLOCK" text="Animate" />
                     <m:MaterialLabel fontSize="2em" fontWeight="BOLD" text="Very very very long long long long long long long long long long text" truncate="true" />
                     <m:MaterialTextBox placeholder="First Name" grid="s12 m6 l6" />
                     <m:MaterialTextBox placeholder="Last Name" grid="s12 m6 l6"/>

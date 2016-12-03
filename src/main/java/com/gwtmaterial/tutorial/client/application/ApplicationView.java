@@ -23,21 +23,53 @@ package com.gwtmaterial.tutorial.client.application;
 
 import javax.inject.Inject;
 
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
+import gwt.material.design.client.ui.MaterialButton;
+import gwt.material.design.client.ui.MaterialTitle;
+import gwt.material.design.client.ui.MaterialToast;
+import gwt.material.design.client.ui.animate.MaterialAnimation;
+import gwt.material.design.client.ui.animate.Transition;
 
 public class ApplicationView extends ViewImpl implements ApplicationPresenter.MyView {
     interface Binder extends UiBinder<Widget, ApplicationView> {
     }
 
+    @UiField
+    MaterialButton btnAnimate;
+
+    @UiField
+    MaterialTitle card;
+
     @Inject
     ApplicationView(
             Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
+        btnAnimate.addClickHandler(new ClickHandler() {
+            @Override
+            public void onClick(ClickEvent event) {
+                MaterialAnimation animation = new MaterialAnimation();
+                animation.transition(Transition.BOUNCE);
+                animation.durationMillis(2000);
+                animation.delayMillis(0);
+                animation.animate(card, new Runnable() {
+                    @Override
+                    public void run() {
+                        MaterialAnimation newAnimation = new MaterialAnimation();
+                        newAnimation.transition(Transition.JELLO);
+                        newAnimation.durationMillis(1000);
+                        newAnimation.delayMillis(0);
+                        newAnimation.animate(card);
+                    }
+                });
+            }
+        });
     }
 
 }
